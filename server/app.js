@@ -2,6 +2,7 @@ const express = require('express');
 const eventRouter = require('./routes/eventRouter');
 const bodyParser = require('body-parser');
 const cors = require('cors')
+const functions = require('firebase-functions');
 
 const app = express();
 

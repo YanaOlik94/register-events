@@ -40,8 +40,6 @@ exports.getAllEvents = async (req, res) => {
       offset: offset
     });
 
-    console.log(req.query.q)
-
     res.status(200).json({
       status: 'success',
       data: {
