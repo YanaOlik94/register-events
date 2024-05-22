@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <div class="d-flex flex-row justify-content-between align-items-center mb-3" [style.margin-top]="'33px'">
+    <h1 class="table-title">Events</h1>
+  </div>
+  <div class="d-flex flex-row justify-content-between align-items-center" [style.margin-left]="'84px'">
+    <div class="d-flex flex-row align-items-center">
+      <span class="me-2">Sorting</span>
+      <select [(ngModel)]="filter" (ngModelChange)="getEventFiltered($event)" class="form-select select-filter">
+        <option value="eventDate" selected>event date</option>
+        <option value="organizer">organizer</option>
+        <option value="title">title</option>
+      </select>
+    </div>
+  </div>
+  <div class="grid card-wrapper" *ngIf="!isMocked">
+    <div class="card-сontent" *ngFor="let event of events">
+      <div class="card-header">
+        <h1 class="mb-0">{{event.title}}</h1>
+      </div>
+      <div class="d-flex flex-column align-items-start divided mt-3">
+        <p class="text-bold mb-2">{{event.description | length: 100}}</p>
+      </div>
+      <div class="d-flex flex-row justify-content-between mt-3 mb-0">
+        <button class="btn btn-sq" (click)="registerOnEvent(event)">
+          <span class="text-bold">Register</span>
+        </button>
+        <button class="btn btn-sq" (click)="openEventDetails(event)">
+          <span class="text-bold">View</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <ng-container *ngIf="eventsLength >= 10">
+    <app-pagination
+      [current]="current"
+      [total]="totalPages()"
+      (goTo)="goToPage($event)"
+      (next)="nextPage($event)"
+      (previous)="prevPage($event)">
+    </app-pagination>
+  </ng-container>
+</div>
+
+<ng-template [ngIf]="isMocked">
+  <div class="grid card-wrapper">
+    <div class="card-сontent" *ngFor="let event of events">
+      <div class="card-header">
+        <h1 class="mb-0">{{event.title}}</h1>
+      </div>
+      <div class="d-flex flex-column align-items-start divided mt-3">
+        <p class="text-bold mb-2">{{event.description | length: 100}}</p>
+      </div>
+      <div class="d-flex flex-row justify-content-between mt-3 mb-0">
+        <button class="btn btn-sq" (click)="registerOnMockEvent(event)">
+          <span class="text-bold">Register</span>
+        </button>
+        <button class="btn btn-sq" (click)="openMockEventDetails(event)">
+          <span class="text-bold">View</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+

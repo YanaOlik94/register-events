@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="d-flex flex-row  align-items-center mb-3" [style.margin-top]="'33px'">
+    <i class="fas fa-solid fa-arrow-left" (click)="goBack()"></i>
+    <h1 class="table-title">Event Registration</h1>
+  </div>
+  <div class="card card-wrapper">
+    <div class="card-body">
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="form-group">
+          <label>Full name</label>
+          <input type="text" class="form-control" name="fullName" placeholder="Enter full name"
+                 formControlName="fullName">
+        </div>
+        @if (isValid('fullName')) {
+        <div class="alert alert-danger">Please, enter your full name</div>
+        }
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" class="form-control" name="email" placeholder="Enter email"
+                 formControlName="email">
+        </div>
+        @if (isValid('email')) {
+        <div class="alert alert-danger">Please, enter valid email</div>
+        }
+        <div class="form-group">
+          <label>Date of birth</label>
+          <input type="date" class="form-control" name="dateOfBirth" placeholder="Enter date of birth"
+                 formControlName="dateOfBirth">
+        </div>
+        @if (isValid('dateOfBirth')) {
+        <div class="alert alert-danger">Please, enter date of birth</div>
+        }
+        <fieldset>
+          <legend class="legend">Where did you hear about this event?</legend>
+          <div class="form-group align-items-center d-flex gap-5 w-50">
+            <label>
+              <input type="radio" formControlName="referralSource" name="referralSource" value="social-media"> Social media
+            </label>
+            <label>
+              <input type="radio" formControlName="referralSource" name="referralSource" value="friends"> Friends
+            </label>
+            <label>
+              <input type="radio" formControlName="referralSource" name="referralSource" value="found-myself"> Found myself
+            </label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-action mt-4" [disabled]="!registerForm.valid">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+

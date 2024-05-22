@@ -1,0 +1,7 @@
+client/node_modules
+client/.eslintcache
+client/.angular/cache
+server/node_modules
+.vscode/*
+coverage/*
+.idea

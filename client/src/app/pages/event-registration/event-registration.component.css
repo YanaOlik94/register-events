@@ -1,0 +1,40 @@
+.card-wrapper {
+  margin: 35px 84px
+}
+
+.table-title {
+  font-size: 2rem;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+.form-control {
+  width: 300px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.legend {
+  font-size: 1rem;
+}
+
+.btn-action {
+  width: 176px;
+  height: 46px;
+  border-radius: 5px;
+  background-color: #414BB2;
+  opacity: 0.8;
+  color: #EFEFEF;
+}
+
+.btn-action:hover {
+  opacity: 0.6;
+}
+
+.fa-arrow-left {
+  cursor: pointer;
+  margin-left: 84px;
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+

@@ -1,0 +1,23 @@
+<div class="pagination-wrapper">
+  <ul class="pagination-list">
+    <li class="pagination-item" (click)="onPrevious()" *ngIf="current > 1">
+      <button class="pagination-button">
+        <i class="fas fa-regular fa-chevron-left"></i>
+      </button>
+    </li>
+    <ng-container *ngFor="let page of pages">
+      <li class="pagination-item dots" *ngIf="page === -1">
+        <span class="pagination-link-disabled">...</span>
+      </li>
+      <li class="pagination-item" *ngIf="page !== -1" [ngClass]="{'active': page === current}">
+        <span class="pagination-link" *ngIf="page === current">{{ page }}</span>
+        <a class="pagination-link" (click)="onGoToPage(page)" *ngIf="page !== current">{{ page }}</a>
+      </li>
+    </ng-container>
+    <li class="pagination-item" *ngIf="current !== total" (click)="onNext()">
+      <button class="pagination-button">
+        <i class="fas fa-regular fa-chevron-right ms-2"></i>
+      </button>
+    </li>
+  </ul>
+</div>
