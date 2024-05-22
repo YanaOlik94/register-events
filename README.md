@@ -2,7 +2,8 @@ In this project implemented all features from base and middle levels. Server sid
 
 I couldn't deploy Node.js Server with Firebase Functions because it's paid.
 
-So in current deployed version on Firebase I use mocks data.
+So on current deployed version that is hosting on Firebase I used mocks data.
+Hosting: https://register-events.web.app/events
 
 To run and check server and app, please download this project and run next commands.
 
