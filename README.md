@@ -1,20 +1,14 @@
-In this project implemented all features from base and middle levels. Server side was made with Node.js and frontend part with Angular.
-
-I couldn't deploy Node.js Server with Firebase Functions because it's paid.
-
-So on current deployed version that is hosting on Firebase I used mocks data.
-Hosting: https://register-events.web.app/events
-
-To run and check server and app, please download this project and run next commands.
-
+Web application for event management, allowing users to view upcoming events, register for events, and view participant lists.
 
 ## RUNNING BACKEND
 
-Run cd server 
+Backend is done witj Node.js
+
+Run cd server to navigate in server directory
 
 npm start --- running server on http://localhost:3000/
 
-# EventsRegister
+# FRONTEND 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
